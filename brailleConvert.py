@@ -36,7 +36,7 @@ def prepImage(name, size):
     xCount = BW.width // 2
     return [BW, xCount, yCount]
 
-def prepImageContours(name, size):
+def prepImageEdges(name, size):
     og = cv2.imread(name, cv2.IMREAD_GRAYSCALE)
     og = cv2.flip(og, 0)
     og = cv2.rotate(og, cv2.ROTATE_90_CLOCKWISE)
@@ -74,7 +74,7 @@ def generate(BW, xCount, yCount):
 
     return lines
 
-def generateContour(coords, xCount, yCount):
+def generateEdges(coords, xCount, yCount):
     lines = []
     for i in range(yCount):
         line = ''
